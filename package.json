@@ -13,6 +13,7 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "nconf": "^0.7.2",
+    "node-record-lpcm16": "^0.1.4",
     "node-wit": "^2.0.0",
     "request": "^2.60.0",
     "serve-favicon": "~2.3.0"

@@ -5,3 +5,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+.mic {
+  font-size: 70pt;
+  border-radius: 50%;
+  border: 3px #666 solid;
+  color: #666;
+  background-color: transparent;
+  height: 150px;
+  width: 150px;
+}
+
+.record-stop {
+  color: #F44336;
+  border-color: #F44336;
+}

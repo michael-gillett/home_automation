@@ -1,11 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var witai = require('../lib/witai');
-var nconf = require('nconf').file('config.json');
-var Photon = require('../lib/photon');
-var photon = new Photon(nconf.get('photon-id'));
+var record = require('node-record-lpcm16');
 
-var ACCESS_TOKEN = nconf.get('witai-access-token');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,6 +11,17 @@ router.get('/', function(req, res, next) {
 
 router.post('/query', function(req, res) {
   witai.getTextIntent(req.body.query.toLowerCase(), function(err, data) {
+    res.send(data);
+  });
+});
+
+router.post('/record-start', function(req, res) {
+  record.start({verbose: true});
+});
+
+router.post('/record-stop', function(req, res) {
+  var recording = record.stop();
+  witai.getSpeechIntent(recording, function(err, data) {
     res.send(data);
   });
 });
