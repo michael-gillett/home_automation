@@ -11,12 +11,25 @@ a {
   border-radius: 50%;
   border: 3px #666 solid;
   color: #666;
-  background-color: transparent;
   height: 150px;
+  display: flex;
+  justify-content
+  align-items: center;
+  margin: 15px auto;
   width: 150px;
+  cursor: pointer;
+}
+
+.record-start:hover {
+  color: #444;
+  border-color: #444;
 }
 
 .record-stop {
   color: #F44336;
   border-color: #F44336;
+}
+
+.result {
+  display: none;
 }

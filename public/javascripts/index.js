@@ -17,10 +17,13 @@ $(function() {
 
   $(document).on('click', '.record-stop', function() {
     console.log('stop')
-    $(this).toggleClass('record-start record-stop')
+    $btn = $(this)
+    $btn.toggleClass('record-start record-stop')
+    $btn.children().toggleClass('fa-microphone fa-spinner fa-spin')
     $.post('/record-stop', function(data) {
       console.log("recording stopped")
-      $('.result').text(JSON.stringify(data.outcomes[0], null, 2))
+      $btn.children().toggleClass('fa-microphone fa-spinner fa-spin')
+      $('.result').show().text(JSON.stringify(data.outcomes[0], null, 2))
     })
   })
 })
