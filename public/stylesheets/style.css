@@ -7,17 +7,21 @@ a {
 }
 
 .mic {
-  font-size: 70pt;
+  position: relative;
+  font-size: 60px;
   border-radius: 50%;
   border: 3px #666 solid;
   color: #666;
-  height: 150px;
-  display: flex;
-  justify-content
-  align-items: center;
+  height: 120px;
+  width: 120px;
   margin: 15px auto;
-  width: 150px;
   cursor: pointer;
+}
+
+.mic .fa {
+  position: absolute;
+  left: 0; right: 0;
+  top: 30px;
 }
 
 .record-start:hover {
