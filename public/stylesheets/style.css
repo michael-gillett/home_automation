@@ -24,11 +24,6 @@ a {
   top: 30px;
 }
 
-.record-start:hover {
-  color: #444;
-  border-color: #444;
-}
-
 .record-stop {
   color: #F44336;
   border-color: #F44336;
