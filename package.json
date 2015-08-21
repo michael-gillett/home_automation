@@ -11,6 +11,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.0",
     "jade": "~1.11.0",
+    "js-quantities": "^1.5.0",
     "moment": "^2.10.6",
     "morgan": "~1.6.1",
     "nconf": "^0.7.2",
