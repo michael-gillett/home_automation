@@ -32,4 +32,8 @@ $(function() {
     var ns_to_ms = data.time[1] / 1000000;
     $('.time').text(s_to_ms + ns_to_ms + 'ms');
   }
+  $('.toggle').click(function(e) {
+    e.preventDefault();
+    $('#wrapper').toggleClass("toggled");
+  });
 })

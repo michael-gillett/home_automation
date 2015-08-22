@@ -6,7 +6,11 @@ var record = require('node-record-lpcm16');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Dorm Automation' });
+  res.render('home', { title: 'Dorm Automation' });
+});
+
+router.get('/debug', function(req, res, next) {
+  res.render('debug', { title: 'Dorm Automation' });
 });
 
 router.post('/query', function(req, res) {
