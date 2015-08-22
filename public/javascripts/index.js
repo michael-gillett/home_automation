@@ -32,8 +32,30 @@ $(function() {
     var ns_to_ms = data.time[1] / 1000000;
     $('.time').text(s_to_ms + ns_to_ms + 'ms');
   }
+
   $('.toggle').click(function(e) {
     e.preventDefault();
     $('#wrapper').toggleClass("toggled");
+  });
+
+  $("#flat").spectrum({
+    flat: true,
+    showInput: false,
+    preferredFormat: "rgb",
+    showButtons: false,
+  });
+
+  $("#flat").on("dragstop.spectrum", function(e, color) {
+    var c = color.toRgb();
+    var rgb = [c.r, c.g, c.b];
+
+    var data = {
+      method: "set",
+      c1: rgb
+    }
+
+    $.post('/photon', {data: JSON.stringify(data)}, function(res) {
+      console.log(res);
+    });
   });
 })
