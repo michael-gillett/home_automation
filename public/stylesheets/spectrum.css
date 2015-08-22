@@ -46,14 +46,14 @@ License: MIT
     top:0;
     left:0;
     bottom:0;
-    right:20%;
+    right: 31%;
 }
 .sp-hue {
     position: absolute;
     top:0;
     right:0;
     bottom:0;
-    left:84%;
+    left: 70%;
     height: 100%;
 }
 
@@ -255,8 +255,6 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 .sp-container {
     border-radius: 0;
-    background-color: #ECECEC;
-    border: solid 1px #f0c49B;
     padding: 0;
 }
 .sp-container, .sp-container button, .sp-container input, .sp-color, .sp-hue, .sp-clear {
@@ -307,8 +305,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     margin-bottom: -290px;
 }
 .sp-picker-container {
-    width: 172px;
-    border-left: solid 1px #fff;
+    width: 280px;
+    background-color: #ccc;
 }
 
 /* Palettes */

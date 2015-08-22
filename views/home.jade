@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  #wrapper.toggled
+  #wrapper
     #sidebar-wrapper
       ul.sidebar-nav
         li.sidebar-brand Dorm Automation
@@ -17,4 +17,7 @@ block content
           .titlebar
             i.fa.fa-bars.toggle
         .row
-          input(type='text' id="flat")
+          .col-xs-12.text-center
+            .title Lights
+            br
+            input(type='text' id="flat")
