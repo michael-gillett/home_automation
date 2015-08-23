@@ -2,11 +2,27 @@ var express = require('express');
 var router = express.Router();
 var witai = require('../lib/witai');
 var record = require('node-record-lpcm16');
+var fs = require('fs');
+var path = require('path');
+var shuffle = require('array-shuffle');
+
+var examples = [];
+
+intents = path.join(__dirname, '../lib/intents');
+require('fs').readdirSync(intents).forEach(function(file) {
+  // Make sure we only read javascript files
+  if(file.indexOf('.js') != -1) {
+    var commands = require(path.join(intents, file)).commands;
+    commands.forEach(function(command) {
+      examples.push(command.example);
+    });
+  }
+});
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Dorm Automation' });
+  res.render('home', { title: 'Dorm Automation', examples: shuffle(examples).slice(0, 8)});
 });
 
 router.get('/lights', function(req, res, next) {
