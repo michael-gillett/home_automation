@@ -1,18 +1,48 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Open Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
   background-color: #eee;
-  font-family: 'Open Sans', sans-serif;
+
 }
 
 a {
   color: #00B7FF;
 }
 
+.content {
+  padding-top: 15px;
+}
+
 .title {
-  font-size: 30pt;
+  font-size: 20pt;
   font-weight: 300;
   margin-top: 10px;
+}
+
+.tiny {
+  font-size: 10pt;
+  margin-right: 10px;
+  color: #777;
+}
+
+.request {
+  display: inline-block;
+  font-size: 15pt;
+  min-height: 32px;
+  width: 100%;
+}
+
+.request:focus {
+  background-color: #dedede;
+  outline-width: 0;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  height: 100px;
+  font-size: 100px;
+  color: #777;
 }
 
 .titlebar {
@@ -26,26 +56,30 @@ a {
   font-size: 30px;
   margin-left: 10px;
   margin-top: 10px;
-  color: #ddd;
+  color: #dedede;
   cursor: pointer;
+}
+
+.full-height {
+  height: calc(100% - 50px);
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 50px;
+  width: 100%;
 }
 
 .mic {
-  position: relative;
-  font-size: 60px;
-  border-radius: 50%;
-  border: 3px #666 solid;
-  color: #666;
-  height: 120px;
-  width: 120px;
-  margin: 15px auto;
-  cursor: pointer;
-}
-
-.mic .fa {
   position: absolute;
+  font-size: 40px;
+  text-align: center;
+  color: #666;
+  margin: 0 auto;
   left: 0; right: 0;
-  top: 30px;
+  bottom: 5px;
+  cursor: pointer;
 }
 
 .record-stop {

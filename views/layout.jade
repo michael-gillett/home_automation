@@ -13,4 +13,21 @@ html
     script(src='/javascripts/index.js')
     script(src='/javascripts/spectrum.js')
   body
-    block content
+    #wrapper
+      #sidebar-wrapper
+        ul.sidebar-nav
+          li.sidebar-brand Dorm Automation
+          li
+            i.fa.fa-home=' Home'
+          li
+            i.fa.fa-lightbulb-o=' Lights'
+          li
+            i.fa.fa-lock=' Lock'
+      #page-content-wrapper.full-height
+        .container-fluid.full-height
+          .row
+            .titlebar
+              i.fa.fa-bars.toggle
+          .content
+            block content
+

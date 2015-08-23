@@ -1,23 +1,14 @@
 extends layout
 
 block content
-  #wrapper
-    #sidebar-wrapper
-      ul.sidebar-nav
-        li.sidebar-brand Dorm Automation
-        li
-          i.fa.fa-home=' Home'
-        li
-          i.fa.fa-lightbulb-o=' Lights'
-        li
-          i.fa.fa-lock=' Lock'
-    #page-content-wrapper
-      .container-fluid
-        .row
-          .titlebar
-            i.fa.fa-bars.toggle
-        .row
-          .col-xs-12.text-center
-            .title Lights
-            br
-            input(type='text' id="flat")
+  .row.full-height
+    .col-sm-6.col-sm-offset-3
+      br
+      .request.text-right(contentEditable='true') What is the moon phase today?
+      p.tiny.text-right Tap to edit
+      br
+      .loading
+        i.fa.fa-spinner.fa-spin
+      .title.response.text-left The moon will be in a first quarter phase with a illumination of 50%.
+  .bottom-bar
+    i.fa.fa-microphone.mic.record-start

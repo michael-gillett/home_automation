@@ -2,28 +2,33 @@
 $(function() {
   $('.query').click(function() {
     var query = $('.query').val();
-    $.post('/query', {query: query}, function(data) {
-      displayResult(data);
-    })
+    processText(query);
   })
 
   $(document).on('click', '.record-start', function() {
-    $(this).toggleClass('record-start record-stop')
-    $(this).children().toggleClass('fa-microphone fa-stop')
     $.post('/record-start', function(data) {
       console.log("recording started")
     })
+    $(this).toggleClass('record-start record-stop');
   })
 
   $(document).on('click', '.record-stop', function() {
-    $btn = $(this)
-    $btn.toggleClass('record-start record-stop')
-    $btn.children().toggleClass('fa-stop fa-spinner fa-spin')
     $.post('/record-stop', function(data) {
       $btn.children().toggleClass('fa-microphone fa-spinner fa-spin')
       displayResult(data)
     })
+    $(this).toggleClass('record-start record-stop');
+    $('.loading').show();
   })
+
+  function processText(query) {
+    $('.loading').show();
+    $('.response').hide();
+    $.post('/query', {query: query}, function(data) {
+      $('.loading').hide();
+      $('.response').show().text(data.res);
+    });
+  }
 
   function displayResult(data) {
     $('.response').text(data.res);
@@ -37,6 +42,21 @@ $(function() {
     e.preventDefault();
     $('#wrapper').toggleClass("toggled");
   });
+
+  // Home page
+
+  var lastValue;
+  $('.request').focusin(function() {
+    lastValue = $(this).html();
+  });
+
+  $('.request').focusout(function() {
+    if (lastValue !== $(this).html()) {
+      processText($(this).html());
+    }
+  });
+
+  // Lights page
 
   $("#flat").spectrum({
     flat: true,
