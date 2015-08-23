@@ -9,20 +9,39 @@ a {
   color: #00B7FF;
 }
 
+.examples {
+  font-size: 15pt;
+  font-weight: 300;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+}
+
+.examples li {
+  margin-top: 15px;
+}
+
 .content {
   padding-top: 15px;
 }
 
 .title {
-  font-size: 20pt;
+  font-size: 25pt;
   font-weight: 300;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 .tiny {
   font-size: 10pt;
   margin-right: 10px;
   color: #777;
+}
+
+.response {
+  font-size: 20pt;
+  font-weight: 300;
+  margin-top: 50px;
 }
 
 .request {

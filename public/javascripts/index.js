@@ -11,6 +11,9 @@ $(function() {
     });
   })
 
+  $('.results').hide();
+  $('.help').show();
+
   $(document).on('click', '.record-start', function() {
     $(this).toggleClass('record-start record-stop');
     $.post('/record-start', function(data) {
@@ -20,6 +23,7 @@ $(function() {
 
   $(document).on('click', '.record-stop', function() {
     $(this).toggleClass('record-start record-stop');
+    $('.help').hide();
     $('.results').hide();
     $('.loading').show();
     $.post('/record-stop', function(data) {
