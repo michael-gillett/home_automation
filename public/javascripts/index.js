@@ -6,19 +6,19 @@ $(function() {
   })
 
   $(document).on('click', '.record-start', function() {
+    $(this).toggleClass('record-start record-stop');
     $.post('/record-start', function(data) {
       console.log("recording started")
-    })
-    $(this).toggleClass('record-start record-stop');
+    });
   })
 
   $(document).on('click', '.record-stop', function() {
-    $.post('/record-stop', function(data) {
-      $btn.children().toggleClass('fa-microphone fa-spinner fa-spin')
-      displayResult(data)
-    })
     $(this).toggleClass('record-start record-stop');
     $('.loading').show();
+    $.post('/record-stop', function(data) {
+      $('.loading').hide();
+      displayResult(data);
+    });
   })
 
   function processText(query) {
@@ -40,6 +40,7 @@ $(function() {
 
   $('.toggle').click(function(e) {
     e.preventDefault();
+    $(this).toggleClass('fa-bars fa-times');
     $('#wrapper').toggleClass("toggled");
   });
 
@@ -47,12 +48,12 @@ $(function() {
 
   var lastValue;
   $('.request').focusin(function() {
-    lastValue = $(this).html();
+    lastValue = $(this).text();
   });
 
   $('.request').focusout(function() {
-    if (lastValue !== $(this).html()) {
-      processText($(this).html());
+    if (lastValue !== $(this).text()) {
+      processText($(this).text());
     }
   });
 
