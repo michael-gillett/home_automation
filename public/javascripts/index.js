@@ -1,6 +1,6 @@
 
 $(function() {
-  $('.btn').click(function() {
+  $('.query').click(function() {
     var query = $('.query').val();
     $.post('/query', {query: query}, function(data) {
       displayResult(data);
