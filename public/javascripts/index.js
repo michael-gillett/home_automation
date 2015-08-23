@@ -20,10 +20,13 @@ $(function() {
 
   $(document).on('click', '.record-stop', function() {
     $(this).toggleClass('record-start record-stop');
+    $('.results').hide();
     $('.loading').show();
     $.post('/record-stop', function(data) {
       $('.loading').hide();
-      displayResult(data);
+      $('.results').show();
+      $('.request').text(data.raw._text);
+      $('.response').show().text(data.res);
     });
   })
 
@@ -33,6 +36,7 @@ $(function() {
     $.post('/query', {query: query}, function(data) {
       $('.loading').hide();
       $('.response').show().text(data.res);
+      $('.results').show();
     });
   }
 

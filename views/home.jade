@@ -4,11 +4,12 @@ block content
   .row.full-height
     .col-sm-6.col-sm-offset-3
       br
-      .request.text-right(contentEditable='true') What is the moon phase today?
-      p.tiny.text-right Tap to edit
-      br
+      .results
+        .request.text-right(contentEditable='true') What is the moon phase today?
+        p.tiny.text-right Tap to edit
+        br
+        .title.response.text-left The moon will be in a first quarter phase with a illumination of 50%.
       .loading
         i.fa.fa-spinner.fa-spin
-      .title.response.text-left The moon will be in a first quarter phase with a illumination of 50%.
   .bottom-bar
     i.fa.fa-microphone.mic.record-start
