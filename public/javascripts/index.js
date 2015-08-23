@@ -1,8 +1,14 @@
 
 $(function() {
-  $('.query').click(function() {
+  $('.query-btn').click(function() {
     var query = $('.query').val();
-    processText(query);
+    $('.results').hide();
+    $('.loading').show();
+    $.post('/query', {query: query}, function(data) {
+      $('.loading').hide();
+      $('.results').show();
+      displayResult(data);
+    });
   })
 
   $(document).on('click', '.record-start', function() {
