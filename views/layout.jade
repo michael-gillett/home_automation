@@ -13,16 +13,27 @@ html
     script(src='/javascripts/index.js')
     script(src='/javascripts/spectrum.js')
   body
-    #wrapper
+    #wrapper.toggled
       #sidebar-wrapper
         ul.sidebar-nav
-          li.sidebar-brand Dorm Automation
+          li.sidebar-brand
+            a Dorm Automation
           li
-            i.fa.fa-home=' Home'
+            a(href="/")
+              i.fa.fa-microphone
+              span Speech
           li
-            i.fa.fa-lightbulb-o=' Lights'
+            a(href="/lights")
+              i.fa.fa-lightbulb-o
+              span Lights
           li
-            i.fa.fa-lock=' Lock'
+            a(href="/lock")
+              i.fa.fa-lock
+              span Lock
+          li
+            a(href="/debug")
+              i.fa.fa-bug
+              span Debug
       #page-content-wrapper.full-height
         .container-fluid.full-height
           .row

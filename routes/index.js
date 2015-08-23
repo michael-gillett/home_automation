@@ -9,6 +9,10 @@ router.get('/', function(req, res, next) {
   res.render('home', { title: 'Dorm Automation' });
 });
 
+router.get('/lights', function(req, res, next) {
+  res.render('lights', { title: 'Dorm Automation' });
+});
+
 router.get('/debug', function(req, res, next) {
   res.render('debug', { title: 'Dorm Automation' });
 });
