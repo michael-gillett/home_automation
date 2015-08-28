@@ -12,7 +12,6 @@ $(function() {
   })
 
   $('.results').hide();
-  $('.help').show();
 
   $(document).on('click', '.record-start', function() {
     $(this).toggleClass('record-start record-stop');
