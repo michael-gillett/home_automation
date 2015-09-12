@@ -39,6 +39,12 @@ router.post('/query', function(req, res) {
   });
 });
 
+router.post('/get-intent', function(req, res) {
+  witai.getIntent(null, req.body, function(err, data) {
+    res.send(data);
+  });
+});
+
 router.post('/record-start', function(req, res) {
   record.start({verbose: true});
 });
