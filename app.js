@@ -5,6 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// var PocketSphinx = require('pocketsphinx');
+
+// var ps = new PocketSphinx();
+
+// ps.on('utterance', function(hyp, utt, score) {
+//     console.log( 'Guessed phrase: ' + hyp);
+//     console.log( 'Confidence score: ' + score);
+//     console.log( 'Unique utterance id: ' + utt);
+// });
+
+// ps.write(myMicrophoneData);
+
 var routes = require('./routes/index');
 var photon = require('./routes/photon');
 
