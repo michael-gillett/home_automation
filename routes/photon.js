@@ -16,9 +16,22 @@ router.post('/switch', function(req, res, next) {
   });
 });
 
+router.get('/switch', function(req, res, next) {
+  photon.variable('switch_on', function(err, data) {
+    res.send(data);
+  });
+});
+
+
 router.post('/lock', function(req, res, next) {
   photon.execute('lock', req.body.data, function(err, data) {
      res.send(data);
+  });
+});
+
+router.get('/lock', function(req, res, next) {
+  photon.variable('is_locked', function(err, data) {
+    res.send(data);
   });
 });
 

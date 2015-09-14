@@ -88,7 +88,7 @@ $(function() {
       c1: rgb
     }
 
-    $.post('/photon', {data: JSON.stringify(data)}, function(res) {
+    $.post('/photon/lights', {data: JSON.stringify(data)}, function(res) {
       console.log(res);
     });
   });
