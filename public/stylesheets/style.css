@@ -109,3 +109,9 @@ a {
 .result {
   display: none;
 }
+
+.lock, .switch {
+  font-size: 100pt;
+  cursor: pointer;
+  color: #555;
+}

@@ -29,6 +29,10 @@ router.get('/lights', function(req, res, next) {
   res.render('lights', { title: 'Dorm Automation' });
 });
 
+router.get('/lock', function(req, res, next) {
+  res.render('lock', { title: 'Dorm Automation' });
+});
+
 router.get('/debug', function(req, res, next) {
   res.render('debug', { title: 'Dorm Automation' });
 });
