@@ -32,6 +32,11 @@ a {
   margin-bottom: 30px;
 }
 
+.subtitle {
+  font-size: 15pt;
+  font-weight: 300;
+}
+
 .tiny {
   font-size: 10pt;
   margin-right: 10px;
