@@ -1,0 +1,13 @@
+{
+  "witai-access-token": "Your Wit.ai server access token",
+  "particle-access-token": "Your particle.io access token",
+  "photon-id": "The id of your photon/ spark core board",
+  "brown-client-id": "Your Brown API client id (must have an @brown.edu email)",
+  "latLng": {"lat": 40.000, "lng": -71.000},
+  "google-api-key": "Your google api key with google places enabled",
+  "forecast-api-key": "Your forecast.io api key",
+  "kodi-server-ip": "The IP address of your Kodi server",
+  "kodi-server-port": 80,
+  "kodi-http-username": "Your Kodi server username",
+  "kodi-http-password": "Your Kodi server password"
+}
