@@ -5,31 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// var PocketSphinx = require('pocketsphinx');
-
-// var ps = new PocketSphinx({
-//   dict: "4753.dict",
-//   lm: "4753.lm",
-//   samprate: 16000,
-//   nfft: 512
-// });
-
-// ps.start();
-// ps.on('utterance', function(hyp, utt, score) {
-//     console.log( 'Guessed phrase: ' + hyp);
-//     console.log( 'Confidence score: ' + score);
-//     console.log( 'Unique utterance id: ' + utt);
-// });
-
-// var mic = require('microphone');
-
-// mic.startCapture();
-
-// mic.audioStream.on('data', function(data) {
-//   ps.write(data);
-// });
-
-
 
 var routes = require('./routes/index');
 var photon = require('./routes/photon');
