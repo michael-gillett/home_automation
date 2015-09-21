@@ -18,7 +18,7 @@ router.post('/switch', function(req, res, next) {
 
 router.get('/switch', function(req, res, next) {
   photon.variable('switch_on', function(err, data) {
-    res.send(data);
+    res.send({state: data});
   });
 });
 
@@ -31,7 +31,7 @@ router.post('/lock', function(req, res, next) {
 
 router.get('/lock', function(req, res, next) {
   photon.variable('is_locked', function(err, data) {
-    res.send(data);
+    res.send({state: data});
   });
 });
 
